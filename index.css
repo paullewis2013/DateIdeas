@@ -1,0 +1,46 @@
+html, body {
+    display: flex;
+    flex-direction: column;
+    background-color: #df1d2d;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#dippy {
+    width: 512px;
+    height: 512px;
+}
+
+#output {
+    margin-top: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    width: 100%;
+}
+
+h1 #output {
+    height: 50%;
+}
+
+#output1 {
+    padding-left: 10%;
+    justify-self: left;
+    text-align: left;
+}
+#output2 {
+    padding-left: 20%;
+    justify-self: left;
+    text-align: left;
+}
