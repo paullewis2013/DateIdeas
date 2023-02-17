@@ -1,16 +1,23 @@
-let lastIndex = null
-let index = null
+// TODO future improvements:
+// sort ideas into categories like cooking, outdoors, etc.
+// dynamically load ideas from a file
+
+let index = 0
 
 function getDateIdea() {
-
-    do {
-        index = Math.floor(Math.random() * dateIdeas.length);
-    }while (index === lastIndex);
-    lastIndex = index;
 
     document.getElementById('output1').innerHTML = "Dippy says,";
     document.getElementById('output2').innerHTML = "\t" + dateIdeas[index];
 
+    index = (index+1)%dateIdeas.length;
+}
+
+// fisher-yates shuffle
+function shuffle(){
+    for (let i = dateIdeas.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [dateIdeas[i], dateIdeas[j]] = [dateIdeas[j], dateIdeas[i]];
+    }    
 }
 
 dateIdeas = [
@@ -20,7 +27,7 @@ dateIdeas = [
     "Go to bird on the run",
     "Go to disco night at belvederes",
     "Go play mini golf",
-    "Go to hammock in Schenley park",
+    "Hammock in Schenley park",
     "Go to a farmers market",
     "Watch a Studio Ghibli movie",
     "Go to noodle head",
@@ -43,3 +50,5 @@ dateIdeas = [
     "Go to the Heinz museum",
     "Go ice skating",
 ]
+
+shuffle()
